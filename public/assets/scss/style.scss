@@ -141,7 +141,7 @@
 @import "utils/variables";
 
 :root {
-  --theme-default: oklch(0.93 0.23 123.09);
+  --theme-default: #7366ff;
   --theme-secondary: #838383;
   --light-background: rgba(242, 243, 247, 0.7);
   --body-font-color: #2f2f3b;
@@ -165,7 +165,7 @@
   --light-slate: #f5f6f9;
   --product-shadow: 0px 1px 0px rgba(82, 82, 108, 0.15);
   --light-shade-primary: rgba(245, 244, 255);
-  --rgb-primary: oklch(0.93 0.23 123.09);
+  --rgb-primary: rgb(115, 102, 255);
   --f-lighter: #7f8183;
   --light-datatable-odd: #f5f6fa;
   --dark-light-color: rgba(10, 10, 10, 0.5);
@@ -245,8 +245,8 @@
   --chart-border: #374558;
   --recent-box-bg: #1d1e26;
   --recent-border: #374558;
-  --body-font-color: oklch(0.93 0.23 123.09);
-  --chart-text-color: rgb(101, 113, 102);
+  --body-font-color: rgba(255, 255, 255, 0.6);
+  --chart-text-color: rgba(101, 101, 113, 1);
   --chart-dashed-border: rgba(135, 135, 136, 0.2);
   --chart-progress-light: #202128;
   --course-light-btn: var(--light-bg);
