@@ -26,6 +26,8 @@ export class ContentComponent {
       localStorage.setItem('layout', this.layout);
       this.layoutService.config.settings.layout = this.layout;
       this.layoutService.applyLayout(this.layout);
+      document.documentElement.style.setProperty('--theme-default', this.layoutService.config.color.primary);
+      document.documentElement.style.setProperty('--theme-secondary', this.layoutService.config.color.secondary);
     }
 
     if (window.innerWidth < 1200) {
