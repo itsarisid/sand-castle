@@ -6,8 +6,8 @@ export const samplePage: Routes = [
         path: '',
         component: DashboardComponent,
         data: {
-            title:'Sample Page',
-            breadcrumb: 'Sample Page'
+            title:'Dashboard',
+            breadcrumb: 'Dashboard'
         }
     }
 ]
