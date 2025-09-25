@@ -6,7 +6,7 @@ import { content } from './shared/routes/content.routes';
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: '/sample-page',
+        redirectTo: '/dashboard',
         pathMatch: 'full'
     },
     {
