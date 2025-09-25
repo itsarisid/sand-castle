@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
+import { cartItems } from '../data/cart';
+import { posOrder } from '../data/dashboard/pos';
 import { OrderDetailsProduct } from '../interface/order';
-import { orderDetails } from '../data/order';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ import { orderDetails } from '../data/order';
 
 export class CartService {
 
-  public cartItems: OrderDetailsProduct[] = orderDetails.products;
+  public cartItems: OrderDetailsProduct[];
+  public posCartItems: OrderDetailsProduct[] = posOrder;
 
   constructor(private toast: ToastrService) {
 
@@ -18,7 +20,7 @@ export class CartService {
     if (items && items !== 'null' && items !== '' && JSON.parse(items).length > 0) {
       this.cartItems = JSON.parse(items);
     } else {
-      this.cartItems = orderDetails.products;
+      this.cartItems = cartItems;
       localStorage.setItem('cart', JSON.stringify(this.cartItems));
     }
   }
@@ -61,4 +63,79 @@ export class CartService {
       return `$${subTotal.toFixed(2)}`
     }
   }
+
+  posAddToCart(item: OrderDetailsProduct) {
+    const cartItem = this.posCartItems.find(cartItem => cartItem.id === item.id);
+
+    this.toast.success(`Product has been Add To Card Succesfully !`, '',{
+      timeOut: 3000,
+      titleClass: 'text-white'
+    });
+   
+    const totalQuantityInCart = this.posCartItems.reduce((total, cartItem) => {
+      if (cartItem.id === item.id) {
+        return total + cartItem.quantity;
+      }
+    
+      return total;
+    }, 0);
+
+    if (totalQuantityInCart + item.quantity <= item.total_quantity) {
+      if (!cartItem) {
+        this.posCartItems.push({ ...item });
+      } else {
+        if (totalQuantityInCart + item.quantity <= item.total_quantity) {
+          cartItem.quantity += item.quantity;
+
+        } else {
+          this.toast.error(`Cannot add more than ${item.total_quantity} items.`,'',{
+            timeOut: 3000
+          });
+        }
+      }
+    } else {
+      this.toast.error(`Cannot add more than ${item.total_quantity} items in total.`,'',{
+        timeOut: 3000
+      });
+    }
+  }
+
+  updatePOSQuantity(value: number, item: OrderDetailsProduct) {
+    const cartItem = this.posCartItems.find(cartItem => cartItem.id === item.id);
+
+    if (!cartItem) return;
+
+    if (value === -1) {
+      cartItem.quantity -= 1;
+      if(cartItem.quantity < 1) {
+        this.posRemoveCartItem(item)
+      }
+    } else if (value == 1) {
+      if(cartItem.quantity < item.total_quantity) {
+        cartItem.quantity += 1;
+      } else {
+        this.toast.error(`Cannot add more than ${item.total_quantity} items`,'',{
+          timeOut: 3000
+        })
+      }
+    } 
+    
+  }
+
+  posRemoveCartItem(item: OrderDetailsProduct) {
+    this.posCartItems = this.posCartItems.filter((product) => product.id !== item.id);
+  }
+
+  getPOSSubTotal() {
+    if(this.posCartItems) {
+      const subTotal = this.posCartItems.reduce((acc, item) => {
+        const price = item.discount_price ? item.discount_price : item.price || 0;
+        const quantity = item.quantity || 0;
+        return acc + (price * quantity);
+      }, 0)
+
+      return `$${subTotal.toFixed(2)}`
+    }
+  }
+  
 }

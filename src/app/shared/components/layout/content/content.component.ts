@@ -20,19 +20,36 @@ export class ContentComponent {
   public layout: string;
 
   constructor(public layoutService: LayoutService, private route: ActivatedRoute, private router: Router) {
+    this.layout = this.layoutService.config.settings.layout;
 
-    if(window.innerWidth < 1200){
+    if (this.layout) {
+      localStorage.setItem('layout', this.layout);
+      this.layoutService.config.settings.layout = this.layout;
+      this.layoutService.applyLayout(this.layout);
+    }
+
+    if (window.innerWidth < 1200) {
       this.layoutService.closeSidebar = true;
-    }else {
+    } else {
       this.layoutService.closeSidebar = false;
+    }
+
+    if(window.innerWidth <= 992){
+      this.layoutService.config.settings.sidebar_type = 'compact-wrapper';
+    }else{
+      if(this.layout) {
+        this.layoutService.applyLayout(this.layout);
+      } else {
+        this.layoutService.config.settings.sidebar_type = this.layoutService.config.settings.sidebar_type;
+      }
     }
   }
 
   @HostListener('window:resize', ['$event'])
   onResize() {
-    if(window.innerWidth < 1200){
+    if (window.innerWidth < 1200) {
       this.layoutService.closeSidebar = true;
-    }else {
+    } else {
       this.layoutService.closeSidebar = false;
     }
   }
