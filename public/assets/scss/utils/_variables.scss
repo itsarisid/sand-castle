@@ -1,58 +1,58 @@
 // General variables
-$theme-font-color: #242934;
-$theme-body-font-color: #404040;
-$theme-body-sub-title-color: #75758a;
-$body-color: #f8f8f8;
-$main-body-color: #f7f8f9;
+$theme-font-color: #242424;
+$theme-body-font-color: #242424;
+$theme-body-sub-title-color: #8a8a8a;
+$body-color: #ffffff;
+$main-body-color: #fbfbfb;
 
 // Theme colors variables
-$primary-color: #7366ff;
-$secondary-color: #838383;
-$success-color: #65c15c;
-$info-color: #40b8f5;
-$warning-color: #ffb829;
-$danger-color: #fc564a;
-$light-color: #f4f4f4;
-$badge-light-color: #52526c;
-$light-gray: #e9edf1;
-$light-widget-border: #efeeff;
-$light-semi-gray: #efefef;
-$font-gray-color: #6c757d;
-$dark-light: $theme-font-color;
-$dark-gray: #898989;
-$dark-color: #3f475a;
-$dark-color-light: #2c323fb8;
-$gray-60: #cccccc;
-$card-body-color: #f9f9fa;
+$primary-color: #4ade80;
+$secondary-color: #8a8a8a;
+$success-color: #22d3ee;
+$info-color: #3b82f6;
+$warning-color: #fb923c;
+$danger-color: #ef4444;
+$light-color: #f7f7f8;
+$badge-light-color: #8a8a8a;
+$light-gray: #e8e8e9;
+$light-widget-border: #e8e8e9;
+$light-semi-gray: #f7f7f8;
+$font-gray-color: #8a8a8a;
+$dark-light: #242424;
+$dark-gray: #8a8a8a;
+$dark-color: #363636;
+$dark-color-light: #424242;
+$gray-60: #b3b3b3;
+$card-body-color: #fbfbfb;
 $transparent-color: transparent;
-$auth-bg-color: #fafafa;
-$light: #fdfeff;
-$semi-dark: #59667a;
-$light-text: #999999;
-$light-paragraph: #8f8f8f;
-$light-background: #d7e2e9;
-$light-font: rgba(27, 49, 85, 0.4);
-$light-semi-font: $semi-dark;
-$light-chartist-grid-color: #f6f9fd;
-$pitch-color: #fe8a7d;
-$color-scarpa: #4c5667;
-$color-fiord: #455a64;
-$black: #000;
-$white: #fff;
-$ps-light-border: #ddd;
-$off-white: #f7f6ff;
-$lighter-white: #e9e9e9;
-$theme-medium-color: #eae8ff;
-$dropdown-border-color: #918e99;
-$light-primary: #e8e5ff;
-$light-secondary: #f2f2f2;
-$light-success: #dcf1da;
-$light-info: #d5f5fe;
-$light-warning: #fff7e5;
-$light-danger: #ffe8e6;
-$light-white: #f9f9fb;
-$light-dark: #eaebf2;
-$folder-color: #efa000;
+$auth-bg-color: #f7f7f8;
+$light: #ffffff;
+$semi-dark: #424242;
+$light-text: #8a8a8a;
+$light-paragraph: #8a8a8a;
+$light-background: #f7f7f8;
+$light-font: #8a8a8a;
+$light-semi-font: #424242;
+$light-chartist-grid-color: #f7f7f8;
+$pitch-color: #f59e0b;
+$color-scarpa: #8a8a8a;
+$color-fiord: #242424;
+$black: #000000;
+$white: #ffffff;
+$ps-light-border: #e8e8e9;
+$off-white: #fbfbfb;
+$lighter-white: #f7f7f8;
+$theme-medium-color: #e8e8e9;
+$dropdown-border-color: #8a8a8a;
+$light-primary: #f7f7f8;
+$light-secondary: #f7f7f8;
+$light-success: #f7f7f8;
+$light-info: #f7f7f8;
+$light-warning: #f7f7f8;
+$light-danger: #f7f7f8;
+$light-white: #ffffff;
+$light-dark: #e8e8e9;
+$folder-color: #fb923c;
 
 // gradient colors
 $gradient-primary: linear-gradient(
@@ -67,10 +67,10 @@ $gradient-bg-primary: linear-gradient(
 );
 
 //Social colors
-$fb: #50598e;
-$twitter: #000c;
-$google-plus: #c64e40;
-$linkedin: #0073b1;
+$fb: #3b82f6; // blue
+$twitter: #242424; // dark
+$google-plus: #ef4444; // red
+$linkedin: #3b82f6; // blue
 
 // Social table
 $fb-color: #2f84f4;
@@ -102,14 +102,15 @@ $font-awesome: "Font Awesome 6 Free";
 $font-ICO: IcoFont;
 
 // dark layout variables
-$dark-body-background: #1d1e26;
-$dark-card-background: #262932;
+$dark-body-background: #242424;
+$dark-card-background: #363636;
 $dark-card-inbox: #323846;
-$dark-small-font-color: #98a6ad;
-$dark-all-font-color: rgba(255, 255, 255, 0.6);
+$dark-small-font-color: #b3b3b3;
+$dark-all-font-color: #b3b3b3;
 $light-all-font-color: rgba(255, 255, 255, 0.2);
 $dark-border-color: $dark-body-background;
-$dark-card-border: #374558;
+$dark-card-border: rgba(255, 255, 255, 0.1);
+$dark-border-color: #242424;
 $dark-editor-document: #2b2b2b;
 $bg-dark-color: #1f2533;
 $dark-datatable-odd: #1f232b;
