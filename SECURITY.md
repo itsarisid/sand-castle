@@ -4,8 +4,7 @@
 
 If you discover a security vulnerability, please contact us using the following details:
 
-- **Email**: security@oxor.io
-- **GPG Key**: `5F5C 4C68 336A 6D2B 6839 E8A7 D6EE EF32 FDC9 71EC`
+- **Email**: khanalex301@gmail.com
 
 We will work to address the issue as quickly as possible. 
 
@@ -13,9 +12,7 @@ We will work to address the issue as quickly as possible.
 
 We currently support the following versions for security updates:
 
-- v1.16.4
-- v1.16.3
-- v1.16.2
+- v1.0
 
 ## Preferred Method of Contact
 
