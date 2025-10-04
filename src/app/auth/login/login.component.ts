@@ -22,7 +22,7 @@ export class LoginComponent {
 
     const userDetails = localStorage.getItem('user');
     if (userDetails?.length != null) {
-      router.navigate(['/dashboard/default'])
+      router.navigate(['/dashboard'])
     }
 
     this.loginForm = new FormGroup({
@@ -45,7 +45,7 @@ export class LoginComponent {
           name: "test user",
         };
         localStorage.setItem("user", JSON.stringify(user));
-        this.router.navigate(["/dashboard/default"]);
+        this.router.navigate(["/dashboard"]);
       } else {
         this.toast.error("Please Enter valid email or password...!", '',
         {
